@@ -1,0 +1,7 @@
+# mydag.dag
+JOB A jobA.sub
+JOB B jobB.sub
+JOB C jobC.sub
+JOB D jobD.sub
+PARENT A CHILD B C
+PARENT B C CHILD D

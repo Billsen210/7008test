@@ -1,0 +1,5 @@
+executable = jobD.sh
+output = jobD.out
+error = jobD.err
+log = jobD.log
+queue
