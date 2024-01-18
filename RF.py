@@ -18,6 +18,7 @@ y_pred = rf_model.predict(X_test)
 report = classification_report(y_test, y_pred)
 conf_matrix = confusion_matrix(y_test, y_pred)
 
-result_df = pd.DataFrame({'Classification Report': [report], 'Confusion Matrix': [conf_matrix]})
+result_str = f"Classification Report:\n{report}\n\nConfusion Matrix:\n{conf_matrix}"
 
-result_df.to_csv('rf_result.csv', index=False)
+with open('rf_result.txt', 'w') as file:
+    file.write(result_str)
