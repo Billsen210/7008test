@@ -3,8 +3,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
-X = data_encoded.drop(columns=['diabetes'])
-y = data_encoded['diabetes']
+data = pd.read_csv('df.csv')
+
+X = data.drop(columns=['diabetes'])
+y = data['diabetes']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 svm_model = svm.SVC()
