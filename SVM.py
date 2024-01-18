@@ -2,6 +2,7 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+import pandas as pd
 
 data = pd.read_csv('df.csv')
 
@@ -16,7 +17,7 @@ y_pred = svm_model.predict(X_test)
 
 report = classification_report(y_test, y_pred)
 conf_matrix = confusion_matrix(y_test, y_pred)
+result_str = f"Classification Report:\n{report}\n\nConfusion Matrix:\n{conf_matrix}"
 
-result_df = pd.DataFrame({'Classification Report': [report], 'Confusion Matrix': [conf_matrix]})
-
-result_df.to_csv('svm_result.csv', index=False)
+with open('svm_result.txt', 'w') as file:
+    file.write(result_str)
