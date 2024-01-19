@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /home/ubuntu
-python3 data_preprocessing.py
+python3 /opt/data/data_preprocessing.py
