@@ -1,9 +1,10 @@
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
+rf_file_path = '/opt/data/rf_result.txt'
+svm_file_path = '/opt/data/svm_result.txt'
+output_file_path = '/opt/data/merged_result.txt'
+with open(rf_file_path, 'r') as rf_file, open(svm_file_path, 'r') as svm_file, open(output_file_path, 'w') as output_file:
 
-report = classification_report(y_test, y_pred)
-print(report)
+    output_file.write(rf_file.read())
 
-conf_matrix = confusion_matrix(y_test, y_pred)
-print("Confusion Matrix:")
-print(conf_matrix)
+    output_file.write('\n\n')
+
+    output_file.write(svm_file.read())
